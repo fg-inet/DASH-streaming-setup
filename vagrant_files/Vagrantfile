@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
 
     client1.vm.provision :shell, path: "setup_client.sh"
     client1.vm.provision "file", source: "start_streaming.sh", destination: "$HOME/start_streaming.sh"
-	config.vm.synced_folder "../DASHStreamExample", "/home/vagrant/DASHStreamExample"
+	config.vm.synced_folder "../DASH-Setup/client", "/home/vagrant/Dash-setup"
 
   end
 
@@ -46,8 +46,8 @@ Vagrant.configure("2") do |config|
     end
 
     server1.vm.provision :shell, path: "setup_server.sh"
-	config.vm.provision "file", source: "../DASHStreamExample/public/video", destination: "$HOME/video-content"
-    config.vm.synced_folder "../DASHStreamExample", "/home/vagrant/DASHStreamExample"
+	config.vm.provision "file", source: "../DASH-setup/server/public/video", destination: "$HOME/video-content"
+    config.vm.synced_folder "../DASH-setup/server", "/home/vagrant/DASH-setup"
   end
 
 end
