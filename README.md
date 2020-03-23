@@ -12,4 +12,4 @@ The setup consists of three virtual machines.
 ## Using the setup for video streaming measurements 
 
 
-## Detailed description 
+## Detailed description of the functionalities
