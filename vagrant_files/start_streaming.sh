@@ -1,6 +1,6 @@
 num_runs=25
 
-HomeDir='/home/vagrant/DASHStreamExample'
+HomeDir='/home/vagrant/ChromeStuff'
 VideoDir='bbb/playlist.mpd'
 Host='localhost'
 
