@@ -24,7 +24,7 @@ __Step 2__ Open a second terminal, navigate again into the subfolder *vagrant_fi
 ```
 bash experiment_startup.sh
 ```
-__Step 3__ As soon as a measurment run is finished, the log files can be found in the following directory: *DASH-setup/client/logs*
+__Step 3__ As soon as a measurment run is finished, the log file can be found in the following directory: *DASH-setup/client/logs*
 
 ## Detailed description of the functionalities
 
