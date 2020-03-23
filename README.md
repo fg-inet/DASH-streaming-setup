@@ -21,6 +21,8 @@ __Step 2__
 ## Detailed description of the functionalities
 
 
+## Evaluating QoE from Log Files 
+
 ## Links/References
   * The measurements are performed using the DASH reference client implementation DASH.js https://github.com/Dash-Industry-Forum/dash.js?
   * Puppeteer was used to allow the usage of DASH.js within the Chrome Browser in headless mode https://github.com/puppeteer/puppeteer
