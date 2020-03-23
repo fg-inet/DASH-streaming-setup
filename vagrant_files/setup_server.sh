@@ -11,7 +11,7 @@ sudo apt update
 
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install -y nodejs
-cd /home/vagrant/DASHStreamExample
+cd /home/vagrant/DASH-setup
 
 npm install
 npm start 
