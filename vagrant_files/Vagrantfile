@@ -5,21 +5,20 @@ Vagrant.configure("2") do |config|
   
   config.vm.box = "bento/ubuntu-16.04"
 
-  config.vm.define "netemLogger1" do |netemLogger1|
+  config.vm.define "netem" do |netem|
 
-    netemLogger1.vm.network "private_network", ip: "192.167.101.12"
-    netemLogger1.vm.network "private_network", ip: "192.167.100.12"
+    netem.vm.network "private_network", ip: "192.167.101.12"
+    netem.vm.network "private_network", ip: "192.167.100.12"
 
-    netemLogger1.vm.provider "virtualbox" do |v|
+    netem.vm.provider "virtualbox" do |v|
       v.memory = 1024
     end
 
-    netemLogger1.vm.provision :shell, path: "setup_netem.sh"
-    netemLogger1.vm.provision "file", source: "start_experiments.sh", destination: "$HOME/start_experiments.sh"
-    netemLogger1.vm.provision "file", source: "network_trace1", destination: "$HOME/network_trace1"
-    netemLogger1.vm.provision "file", source: "network_trace2", destination: "$HOME/network_trace2"
-    netemLogger1.vm.provision "file", source: "network_trace0", destination: "$HOME/network_trace0"
-    config.vm.synced_folder "../netem_logs", "/home/vagrant/netem_log"
+    netem.vm.provision :shell, path: "setup_netem.sh"
+    netem.vm.provision "file", source: "start_experiments.sh", destination: "$HOME/start_experiments.sh"
+    netem.vm.provision "file", source: "network_trace1", destination: "$HOME/network_trace1"
+    netem.vm.provision "file", source: "network_trace2", destination: "$HOME/network_trace2"
+    netem.vm.provision "file", source: "network_trace0", destination: "$HOME/network_trace0"
   end
 
   config.vm.define "client1", primary: true do |client1|
