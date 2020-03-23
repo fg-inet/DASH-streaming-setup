@@ -15,7 +15,11 @@ __Step 1__ Open a terminal and navigate into the subfolder *vagrant_files*. Run 
 ```
 vagrant up
 ```
-All VMs are ready as soon as you can see the following 
+All VMs are ready as soon as you can see the following output: 
+```
+[nodemon] npm started
+```
+
 __Step 2__ 
 
 ## Detailed description of the functionalities
