@@ -15,10 +15,9 @@ Vagrant.configure("2") do |config|
     end
 
     netem.vm.provision :shell, path: "setup_netem.sh"
-    netem.vm.provision "file", source: "start_experiments.sh", destination: "$HOME/start_experiments.sh"
-    netem.vm.provision "file", source: "network_trace1", destination: "$HOME/network_trace1"
-    netem.vm.provision "file", source: "network_trace2", destination: "$HOME/network_trace2"
-    netem.vm.provision "file", source: "network_trace0", destination: "$HOME/network_trace0"
+	netem.vm.provision "file", source: "netem_start_trace.sh", destination: "$HOME/netem_start_trace.sh"
+	netem.vm.provision "file", source: "trace_killer.sh", destination: "$HOME/trace_killer.sh"
+	netem.vm.proivison "file", source: "trace_files", destination: "trace_files"
   end
 
   config.vm.define "client1", primary: true do |client1|
