@@ -2,7 +2,6 @@ const intervalLength = 100; // in ms
 const initialBufferLevel = 12;
 let player = dashjs.MediaPlayer().create();	 
 let qualityLog = [];
-let stallLog = [];
 let segmentLog = [];
 let metricInterval;
 let isPlaying = 0;
@@ -20,15 +19,8 @@ window.onload = function () {
   let videoUrl = "/video/" + getUrlParameter('vid');
   player.updateSettings({'streaming': {stableBufferTime: 30}});
   player.initialize(document.querySelector("#videoPlayer"), videoUrl, false);
-  let initMetric = {
-    timeStamp: Date.now(),
-    isPlaying: 0
-  };
-  stallLog.push(initMetric);
-  
   
   metricInterval = setInterval(function () {
-    //let playerMetric = player.getMetricsFor('video');
     let dashMetrics = player.getDashMetrics();
     let metric = {
       timeStamp: Date.now(),
@@ -56,29 +48,6 @@ player.on("fragmentLoadingCompleted", function (data) {
     downloadTime: fragmentEnd - fragmentStart
   };
   segmentLog.push(metric);
-});
-player.on("playbackPlaying", function () {
-  let metric = {
-    timeStamp: Date.now(),
-    isPlaying: 1
-  };
-  stallLog.push(metric);
-});
-
-player.on("bufferLoaded" && "canPlay", function () {
-  //player.play();
-  //isPlaying = 1;
-});
-
-player.on("playbackWaiting", function () {
-  let metric = {
-    timeStamp: Date.now(),
-    isPlaying: 0
-  };
-  stallLog.push(metric);
-  });
-player.on("playbackStalled", function () {
-  console.log("isStalled")
 });
 
 player.on("playbackEnded", function () {

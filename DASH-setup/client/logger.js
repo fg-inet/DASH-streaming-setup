@@ -44,26 +44,17 @@ async function start() {
       }
       const qualityStream = fs.createWriteStream(logDir + '/' + 'qualityLog.json', {flags: 'w'});
       const segmentStream = fs.createWriteStream(logDir + '/' + 'segmentLog.json', {flags: 'w'});
-      const stallStream = fs.createWriteStream(logDir + '/' + 'stallLog.json', {flags: 'w'});
       qualityStream.write(JSON.stringify(metrics.qualityLog));
       segmentStream.write(JSON.stringify(metrics.segmentLog));
-      stallStream.write(JSON.stringify(metrics.stallLog));
       qualityStream.end(function () {
-        if (savedMetrics < 2) {
+        if (savedMetrics < 1) {
           savedMetrics++
         } else {
           stop(browser);
         }
       });
       segmentStream.end(function () {
-        if (savedMetrics < 2) {
-          savedMetrics++
-        } else {
-          stop(browser);
-        }
-      });
-      stallStream.end(function () {
-        if (savedMetrics < 2) {
+        if (savedMetrics < 1) {
           savedMetrics++
         } else {
           stop(browser);
