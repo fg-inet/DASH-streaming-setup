@@ -20,7 +20,10 @@ All VMs are ready as soon as you can see the following output:
 [nodemon] npm started
 ```
 
-__Step 2__ 
+__Step 2__ Open a second terminal, navigate again into the subfolder *vagrant_files* and run the following commands to start the measurements. 
+```
+bash experiment_startup.sh
+```
 
 ## Detailed description of the functionalities
 
