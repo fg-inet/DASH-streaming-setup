@@ -24,6 +24,17 @@ __Step 2__
 
 ## Detailed description of the functionalities
 
+### Client
+
+### Netem 
+
+### Server 
+
+## Customizing the setup 
+  * Using own video: 
+  * Changing the heuristic
+  * Own traces 
+
 
 ## Evaluating QoE from Log Files 
 
