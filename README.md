@@ -24,7 +24,7 @@ __Step 2__ Open a second terminal, navigate again into the subfolder *vagrant_fi
 ```
 bash experiment_startup.sh
 ```
-__Step 3__ As soon as a measurment run is finished, the log file can be found in the following directory: *DASH-setup/client/logs*
+__Step 3__ As soon as a measurment run is finished, the log file can be found in the following directory: *DASH-setup/client/logs*. 
 
 ## Detailed description of the functionalities
 
@@ -37,8 +37,72 @@ __Step 3__ As soon as a measurment run is finished, the log file can be found in
 ## Customizing the setup 
 We describe in the following, how the setup can be customized. 
 ### ABR and buffer thresholds
-The ABR and buffer thresholds can be set in the *player.js* which is located at *DASH-setup/server/public/javascripts*.
+To adapt ABR and buffer thresholds, navigate to *DASH-setup/server/public/javascripts*. Open the file *player.js* to modify the parameters in line 20: 
+```
+player.updateSettings({'streaming': {stableBufferTime: 30, bufferTimeAtTopQuality: 45, abr:{ABRStrategy: 'abrDynamic'}}});
+```
+DASH.js provides three different ABR Strategies: 
+  * abrDynamic (default, hybrid solution)
+  * abrBolda (buffer-based)
+  * abrThroughput (rate-based)
+  
+Please find more information regarding different buffer threshold settings and other player/ABR settings here: http://cdn.dashjs.org/latest/jsdoc/module-Settings.html#~StreamingSettings__anchor
 
+### Using own bandwidth traces or videos
+  * Traces: The automation srcipt *experiment_startup.sh* considers all available traces for a specific video. Hence, if measurements should be run with a specific set of traces, these traces simply need to be put into the respective directory here: *vagrant_files/trace_files*.
+  * Videos: All test videos, which are located in the folder *DASH-setup/public/videos*, will be available for streaming at the server. In our setup, we used the following structure for the video sequences. 
+```
+videos
+|
+|_____CBR_BBB_VAR_10
+|     |     playlist.mpd
+|     |_____quality_0
+|     |     |     quality0.mpd
+|     |     |     init_stream0.m4s
+|     |     |     chunk1.m4s
+|     |     |     chunk2.m4s
+|     |     |     chunk3.m4s
+|     |       
+|     |_____quality_1
+|     |     |     quality1.mpd
+|     |     |     init_stream1.m4s
+|     |     |     chunk1.m4s
+|     |     |     chunk2.m4s
+|     |     |     chunk3.m4s
+|     |
+|     |_____quality_2
+|     |     |     quality2.mpd
+|     |     |     init_stream2.m4s
+|     |     |     chunk1.m4s
+|     |     |     chunk2.m4s
+|     |     |     chunk3.m4s
+|
+|_____CBR_BBB_NA_10
+|     |     playlist.mpd
+|     |_____quality_0
+|     |     |     quality0.mpd
+|     |     |     init_stream0.m4s
+|     |     |     chunk1.m4s
+|     |     |     chunk2.m4s
+|     |     |     chunk3.m4s
+|     |       
+|     |_____quality_1
+|     |     |     quality1.mpd
+|     |     |     init_stream1.m4s
+|     |     |     chunk1.m4s
+|     |     |     chunk2.m4s
+|     |     |     chunk3.m4s
+|     |
+|     |_____quality_2
+|     |     |     quality2.mpd
+|     |     |     init_stream2.m4s
+|     |     |     chunk1.m4s
+|     |     |     chunk2.m4s
+|     |     |     chunk3.m4s
+
+```
+  
+  
   * Using own video: 
   * Changing the heuristic
   * Own traces 
