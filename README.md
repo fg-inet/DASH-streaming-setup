@@ -35,6 +35,10 @@ __Step 3__ As soon as a measurment run is finished, the log file can be found in
 ### Server 
 
 ## Customizing the setup 
+We describe in the following, how the setup can be customized. 
+### ABR and buffer thresholds
+The ABR and buffer thresholds can be set in the *player.js* which is located at *DASH-setup/server/public/javascripts*.
+
   * Using own video: 
   * Changing the heuristic
   * Own traces 
