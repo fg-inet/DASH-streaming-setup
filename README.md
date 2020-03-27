@@ -132,8 +132,10 @@ videos
   
 ### Using a fixed bandwidth instead of traces
 During the measurement runs, the bandwidth is automatically throtteled at the netem according to the values specified in the the trace files. However, if the bandwidth should be kept fix, please follow these steps: 
+
 __Step 1__: Log in to the netem
-``` vagrant ssh netem 
+``` 
+vagrant ssh netem 
 ```
 __Step 2__: Add the queueing discipline (qdisc) on the interface eth2
 ```
