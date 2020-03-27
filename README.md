@@ -55,6 +55,8 @@ __Step 3__ As soon as a measurment run is finished, the log file can be found in
 
 ## Detailed description 
 ![](images/testbed.jpg)
+Running __vagrant up__ on the host machine automatically provisions server, netem, and client. The configuratinons for these machines can be changed in the *Vagrantfile*, as well as in the respective provisioning scirpts *setup_server.sh*, *setup_netem.sh*, and *setup_client.sh*. Running the *experiment_startup.sh* script initiates the automatized measurements. 
+
 ### Client
 
 ### Netem 
