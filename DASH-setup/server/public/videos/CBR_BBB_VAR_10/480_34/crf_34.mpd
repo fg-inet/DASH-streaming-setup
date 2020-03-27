@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MPD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="urn:mpeg:dash:schema:mpd:2011"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xsi:schemaLocation="urn:mpeg:DASH:schema:MPD:2011 http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-DASH_schema_files/DASH-MPD.xsd"
+	profiles="urn:mpeg:dash:profile:isoff-live:2011"
+	type="static"
+	mediaPresentationDuration="PT10M34.5S"
+	minBufferTime="PT20.0S">
+	<ProgramInformation>
+	</ProgramInformation>
+	<Period id="0" start="PT0.0S">
+		<AdaptationSet id="0" contentType="video" segmentAlignment="true" bitstreamSwitching="true">
+			<Representation id="0" mimeType="video/mp4" codecs="avc1.64081e" bandwidth="216000" width="854" height="480" frameRate="24/1">
+				<SegmentTemplate timescale="12288" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="51712" />
+						<S d="122880" />
+						<S d="25600" />
+						<S d="47616" />
+						<S d="89600" />
+						<S d="122880" />
+						<S d="28160" />
+						<S d="122880" />
+						<S d="29184" />
+						<S d="102912" />
+						<S d="56320" />
+						<S d="38400" />
+						<S d="69120" />
+						<S d="23040" />
+						<S d="26624" />
+						<S d="25600" />
+						<S d="54272" />
+						<S d="120320" />
+						<S d="20480" />
+						<S d="102400" />
+						<S d="51200" />
+						<S d="107520" />
+						<S d="65024" />
+						<S d="35840" />
+						<S d="31744" />
+						<S d="41984" />
+						<S d="122880" />
+						<S d="116736" />
+						<S d="33280" />
+						<S d="84992" />
+						<S d="59392" />
+						<S d="17920" />
+						<S d="12288" />
+						<S d="35840" />
+						<S d="22016" />
+						<S d="18944" />
+						<S d="80896" />
+						<S d="19968" />
+						<S d="33792" />
+						<S d="72704" />
+						<S d="35840" />
+						<S d="34816" />
+						<S d="30720" />
+						<S d="12800" />
+						<S d="14848" />
+						<S d="35840" />
+						<S d="53248" />
+						<S d="21504" />
+						<S d="18944" />
+						<S d="17408" />
+						<S d="33792" />
+						<S d="26624" />
+						<S d="82432" />
+						<S d="40448" />
+						<S d="30208" />
+						<S d="45056" />
+						<S d="31232" />
+						<S d="117760" />
+						<S d="17920" />
+						<S d="89088" />
+						<S d="15360" />
+						<S d="20480" r="3" />
+						<S d="30720" />
+						<S d="20480" r="2" />
+						<S d="51200" />
+						<S d="69120" />
+						<S d="24064" />
+						<S d="22016" />
+						<S d="20480" />
+						<S d="40960" />
+						<S d="92160" />
+						<S d="40960" />
+						<S d="18944" />
+						<S d="37888" />
+						<S d="61440" />
+						<S d="38912" />
+						<S d="51200" />
+						<S d="23552" />
+						<S d="34304" />
+						<S d="24576" />
+						<S d="36352" />
+						<S d="18944" />
+						<S d="122880" />
+						<S d="38912" />
+						<S d="35328" />
+						<S d="122880" />
+						<S d="67584" />
+						<S d="122880" />
+						<S d="74240" />
+						<S d="17408" />
+						<S d="32768" />
+						<S d="36352" />
+						<S d="34816" />
+						<S d="118272" />
+						<S d="20992" />
+						<S d="24576" />
+						<S d="19968" />
+						<S d="34816" />
+						<S d="69632" />
+						<S d="43008" />
+						<S d="28160" />
+						<S d="20992" />
+						<S d="49152" />
+						<S d="14848" />
+						<S d="33280" />
+						<S d="22528" />
+						<S d="30208" />
+						<S d="25600" />
+						<S d="13312" />
+						<S d="22016" />
+						<S d="18432" />
+						<S d="35840" />
+						<S d="22528" />
+						<S d="61952" />
+						<S d="19968" />
+						<S d="12288" />
+						<S d="20480" />
+						<S d="84480" />
+						<S d="80384" />
+						<S d="41984" />
+						<S d="55808" />
+						<S d="62464" />
+						<S d="18944" />
+						<S d="90112" />
+						<S d="17920" />
+						<S d="26624" />
+						<S d="30208" />
+						<S d="51712" />
+						<S d="81920" />
+						<S d="122880" r="10" />
+						<S d="88064" />
+						<S d="122880" />
+						<S d="71680" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+	</Period>
+</MPD>
