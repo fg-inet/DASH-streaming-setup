@@ -17,7 +17,7 @@ function getUrlParameter(name) {
 }
 window.onload = function () {
   let videoUrl = "/video/" + getUrlParameter('vid');
-  player.updateSettings({'streaming': {stableBufferTime: 30}});
+  player.updateSettings({'streaming': {stableBufferTime: 30, bufferTimeAtTopQuality: 45, abr:{ABRStrategy: 'abrDynamic'}}});
   player.initialize(document.querySelector("#videoPlayer"), videoUrl, false);
   
   metricInterval = setInterval(function () {
