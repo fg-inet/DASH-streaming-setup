@@ -22,7 +22,7 @@ All VMs are ready as soon as you can see the following output:
 
 __Step 2__ Open a second terminal and navigate again into the subfolder *vagrant_files* 
 
-   * __To perform a single measurement run__: Log in to the client VM by typing the following command: 
+   * __Case 1: Performing a single measurement run__: Log in to the client VM by typing the following command: 
 ```
    vagrant ssh client 
 ```   
@@ -39,13 +39,13 @@ With the parameters being as follows.
    * run_var: A unique name for the experiment run
    * videoDir: Server-sided path for video to be streamed 
    * host: IP address of the server
+   
 Then, a single run can for exmaple be initiated as follows: 
-npm start $browserDIr $run_var $videoDir $host
 ```
 npm start '/home/vagrant/BrowserDir' 'test_run' 'CBR_BBB_NA_10/playlist.mpd' '192.167.101.13'
 ```   
 
-   * __For a set of measurement runs using the automation script__: Run the following commands to start the measurements. 
+   * __Case2: Performing a set of measurement runs using the automation script__: Run the following commands to start the measurements. 
     ```
     bash experiment_startup.sh
     ```
