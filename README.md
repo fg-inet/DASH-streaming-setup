@@ -51,15 +51,22 @@ bash experiment_startup.sh
 ```
 
 
-__Step 3__ As soon as a measurment run is finished, the log file can be found in the following directory: *DASH-setup/client/logs*. 
+__Step 3__ As soon as a measurment run is finished, the log file can be found in the following directory on the host machine: *DASH-setup/client/logs*. 
+
+__Step 4__ To destroy all VMs for clean up, run: 
+``` 
+vagrant destroy
+```
 
 ## Detailed description 
 ![](images/testbed.jpg)
 Running __vagrant up__ on the host machine automatically provisions server, netem, and client. The configurations for these machines can be changed in the *Vagrantfile*, as well as in the respective provisioning scripts *setup_server.sh*, *setup_netem.sh*, and *setup_client.sh*. Running *experiment_startup.sh* initiates the automatized measurements. 
    * __line 4__ -- allows to specify the number of runs to be performed for each trace
    * __line 17__ ```vagrant ssh netem -- -t bash trace_killer.sh ``` -- ensures that no old traces, e.g. from previous measurement runs, ar active. The script *trace_killer.sh* is located at the netem. Via the SSH command, the host machine triggers the netem to perform the cleanup. 
-   * __line 20__ ```vagrant ssh netem -- -t timeout 1500s bash netem_start_trace.sh trace_files/$trace_folder/$tr &```-- Via SSH, the host machine triggers the netem to start limiting the bandwidth according to the values specified in the trace file.
-   * __line 23__ ```vagrant ssh client -- -t "(cd /home/vagrant/DASH-setup/client && timeout $vid_timeout npm start $browserDir $run_var $videoDirVAR $host)" ``` -- Via SSH, the client is pushed to start the video stream with the the specified parameters. The process is started so to quit after the time specified in $vid_timeout. This is to ensure that if any error occurs during a run (e.g. a timeout event from DASH.js or 404 error), the measurement procedures does not get stuck. 
+   * __line 20__ ```vagrant ssh netem -- -t timeout 1500s bash netem_start_trace.sh trace_files/$trace_folder/$tr &```-- Via SSH, the host machine triggers the netem to start limiting the bandwidth according to the values specified in the trace file using linux traffic control (tc).
+   * __line 23__ ```vagrant ssh client -- -t "(cd /home/vagrant/DASH-setup/client && timeout $vid_timeout npm start $browserDir $run_var $videoDirVAR $host)" ``` -- Via SSH, the client is pushed to start the video stream with the the specified parameters. The process is started so to quit after the time specified in $vid_timeout. This is to ensure that if any error occurs during a run (e.g. a timeout event from DASH.js or 404 error), the measurement procedure does not get stuck. 
+
+As soon as one video has been streamed completely, the client stores the .json log file in a folder which is shared with the host machine. 
 
 
 
