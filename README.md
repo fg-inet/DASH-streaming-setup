@@ -76,7 +76,7 @@ DASH.js provides three different ABR Strategies:
 Please find more information regarding different buffer threshold settings and other player/ABR settings here: http://cdn.dashjs.org/latest/jsdoc/module-Settings.html#~StreamingSettings__anchor
 
 ### Using own bandwidth traces or videos
-  * Traces: The automation srcipt *experiment_startup.sh* considers all available traces for a specific video. Hence, if measurements should be run with a specific set of traces, these traces simply need to be put into the respective directory here: *vagrant_files/trace_files*.
+  * Traces: The automation srcipt *experiment_startup.sh* performs measurement runs for all available traces in the specified trace folder. Hence, if measurements should be run with a specific set of traces, these traces simply need to be put into the respective directory here: *vagrant_files/trace_files*.
   * Videos: All test videos, which are located in the folder *DASH-setup/public/videos*, will be available for streaming at the server. In our setup, we used the following structure for the video sequences. 
 ```
 videos
