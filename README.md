@@ -45,7 +45,7 @@ Then, a single run can for exmaple be initiated as follows:
 npm start '/home/vagrant/BrowserDir' 'test_run' 'CBR_BBB_NA_10/playlist.mpd' '192.167.101.13'
 ```   
 
-   * __Case 2: Performing a set of measurement runs using the automation script__: Run the following commands to start the measurements. 
+   * __Case 2: Performing a set of measurement runs using the automation script__: Adapt the file *experiment_startup.sh* according to your needs. From the *vagrant_files* directory, run the following command from your host machine:
 ```
 bash experiment_startup.sh
 ```
