@@ -139,3 +139,7 @@ videos
   * The measurements are performed using the DASH reference client implementation DASH.js https://github.com/Dash-Industry-Forum/dash.js?
   * Puppeteer was used to allow the usage of DASH.js within the Chrome Browser in headless mode https://github.com/puppeteer/puppeteer
   * The QoE is evaluated according to the standardized ITU-T P.1203 model https://github.com/itu-p1203/itu-p1203
+  
+## Contact
+If you experience problems or have any questions on the measurement setup, please contact Susanna Schwarzmann (susanna@inet.tu-berlin.de)
+
