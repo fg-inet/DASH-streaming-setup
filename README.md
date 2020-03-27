@@ -8,6 +8,12 @@ The setup consists of three virtual machines.
    
 ![](images/setup.JPG)
 
+## Requirements
+The setup has been tested for the following operating systems and Vagrant versions: 
+   * Windows 10 - Vagrant 2.2.6
+   * Debian 9.12 (stretch) - Vagrant 2.0.2
+   
+In general, the setup should be runnable on any current platform having Vagrant installed. However, due to the virtualization, it cannot be run in a virtual envrionment (e.g. on a server VM). 
 
 
 ## Using the setup for video streaming measurements 
