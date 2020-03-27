@@ -20,10 +20,37 @@ All VMs are ready as soon as you can see the following output:
 [nodemon] starting node ./bin/www
 ```
 
-__Step 2__ Open a second terminal, navigate again into the subfolder *vagrant_files* and run the following commands to start the measurements. 
+__Step 2__ Open a second terminal and navigate again into the subfolder *vagrant_files* 
+
+   * __To perform a single measurement run__: Log in to the client VM by typing the following command: 
 ```
-bash experiment_startup.sh
+   vagrant ssh client 
+```   
+On the client VM, change the directory using 
 ```
+cd /home/vagrant/DASH-setup/fetcher
+```
+In this directory, a measurment run can be initiated with the following command: 
+```
+npm start $browserDIr $run_var $videoDir $host
+```
+With the parameters being as follows. 
+   * browserDir: A directory located at the client, where Chrome settings and log files are stored
+   * run_var: A unique name for the experiment run
+   * videoDir: Server-sided path for video to be streamed 
+   * host: IP address of the server
+Then, a single run can for exmaple be initiated as follows: 
+npm start $browserDIr $run_var $videoDir $host
+```
+npm start '/home/vagrant/BrowserDir' 'test_run' 'CBR_BBB_NA_10/playlist.mpd' '192.167.101.13'
+```   
+
+   * __For a set of measurement runs using the automation script__: Run the following commands to start the measurements. 
+    ```
+    bash experiment_startup.sh
+    ```
+
+
 __Step 3__ As soon as a measurment run is finished, the log file can be found in the following directory: *DASH-setup/client/logs*. 
 
 ## Detailed description of the functionalities
