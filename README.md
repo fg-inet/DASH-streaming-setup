@@ -53,8 +53,8 @@ bash experiment_startup.sh
 
 __Step 3__ As soon as a measurment run is finished, the log file can be found in the following directory: *DASH-setup/client/logs*. 
 
-## Detailed description of the functionalities
-
+## Detailed description 
+![](images/testbed.jpg)
 ### Client
 
 ### Netem 
