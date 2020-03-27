@@ -45,10 +45,10 @@ Then, a single run can for exmaple be initiated as follows:
 npm start '/home/vagrant/BrowserDir' 'test_run' 'CBR_BBB_NA_10/playlist.mpd' '192.167.101.13'
 ```   
 
-   * __Case2: Performing a set of measurement runs using the automation script__: Run the following commands to start the measurements. 
-    ```
-    bash experiment_startup.sh
-    ```
+   * __Case 2: Performing a set of measurement runs using the automation script__: Run the following commands to start the measurements. 
+```
+bash experiment_startup.sh
+```
 
 
 __Step 3__ As soon as a measurment run is finished, the log file can be found in the following directory: *DASH-setup/client/logs*. 
