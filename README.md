@@ -130,10 +130,7 @@ videos
 ```
   
   
-  * Using own video: 
-  * Changing the heuristic
-  * Own traces 
-  * Using a fixed bandwidth
+### Using a fixed bandwidth instead of traces
 
 
 ## Evaluating QoE from Log Files 
