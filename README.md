@@ -146,8 +146,6 @@ __Step 3__: Set the bandwidth limit, expressed as kbps, on eth2:
 sudo tc class add dev eth2 parent 1: classid 1:1 htb rate 1000kbit
 ```
 
-## Evaluating QoE from Log Files 
-
 ## Links/References
   * The measurements are performed using the DASH reference client implementation DASH.js https://github.com/Dash-Industry-Forum/dash.js?
   * Puppeteer was used to allow the usage of DASH.js within the Chrome Browser in headless mode https://github.com/puppeteer/puppeteer
