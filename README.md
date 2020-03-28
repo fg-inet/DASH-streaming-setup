@@ -34,7 +34,7 @@ __Step 2__ Open a second terminal and navigate again into the subfolder *vagrant
 ```   
 On the client VM, change the directory using 
 ```
-cd /home/vagrant/DASH-setup/fetcher
+cd /home/vagrant/DASH-setup/
 ```
 In this directory, a measurment run can be initiated with the following command: 
 ```
