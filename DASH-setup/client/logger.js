@@ -10,10 +10,9 @@ const url = 'http://' + consoleGivenHost + ':3000/?name=run_' + run + '&vid=' + 
 const macExec = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const linuxExec = 'google-chrome';
 console.log("completeURI: " + url);
-console.log("userDir: " + user_data_dir);
-console.log("runVariable: " + run);
-console.log("videoForPlayback: " + video);
-console.log("Streaming Server: " + consoleGivenHost);
+console.log("run var: " + run);
+console.log("Played back video: " + video);
+console.log("Streaming server: " + consoleGivenHost);
 let progress = 0;
 
 
@@ -66,8 +65,7 @@ async function start() {
       try {
         let metricLogs = {
           qualityLog: qualityLog,
-          segmentLog: segmentLog,
-          stallLog: stallLog
+          segmentLog: segmentLog
         };
         return Promise.resolve(JSON.stringify(metricLogs));
       } catch (error) {
@@ -94,7 +92,7 @@ async function start() {
           saveMetricLists(metric);
         })
         .catch((error) => {
-          process.stdout.write("x");
+          process.stdout.write("ERROR - metrics could not be logged");
         });
     }
     // Define a window.onPlaybackEnded function (it is executed here but available on the page)

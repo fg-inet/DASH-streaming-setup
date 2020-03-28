@@ -16,7 +16,7 @@ function getUrlParameter(name) {
   return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 }
 window.onload = function () {
-  let videoUrl = "/video/" + getUrlParameter('vid');
+  let videoUrl = "/videos/" + getUrlParameter('vid');
   player.updateSettings({'streaming': {stableBufferTime: 30, bufferTimeAtTopQuality: 45, abr:{ABRStrategy: 'abrDynamic'}}});
   player.initialize(document.querySelector("#videoPlayer"), videoUrl, false);
   
