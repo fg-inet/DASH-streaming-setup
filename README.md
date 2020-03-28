@@ -17,7 +17,7 @@ In general, the setup should be runnable on any current platform having Vagrant 
 
 
 ## Using the setup for video streaming measurements 
-__Step 1__ Open a terminal and navigate into the subfolder *vagrant_files*. Run the following command to provision all VMs (this might take a few minutes).
+__Step 1__ Open a terminal and navigate into the subfolder *vagrant_files*. Run the following command to provision all VMs (this will take a few minutes).
 ```
 vagrant up
 ```
