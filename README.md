@@ -51,7 +51,7 @@ Then, a single run can for exmaple be initiated as follows:
 npm start /home/vagrant/browserDir test_run CBR_BBB_NA_10/playlist.mpd 192.167.101.13
 ```   
 
-   * __Case 2: Performing a set of measurement runs using the automation script__: Adapt the file *experiment_startup.sh* according to your needs (more detail on the script can be found below). From the *vagrant_files* directory, run the following command from your host machine:
+   * __Case 2: Performing a set of measurement runs using the automation script__: The *experiment_startup.sh* in this repository performs 8 measurements in total. It uses the 2 traces from the *test_traces* folder, performs two runs, and streams the variably segmented and th fixed segmented version of the BBB video. If neccessary, adapt the file *experiment_startup.sh* according to your needs (more detail on the script can be found below). From the *vagrant_files* directory, run the following command from your host machine:
 ```
 bash experiment_startup.sh
 ```
