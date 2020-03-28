@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
     end
 
     server.vm.provision :shell, path: "setup_server.sh"
-	config.vm.provision "file", source: "../DASH-setup/server/public/videos", destination: "$HOME/video-content"
+	server.vm.provision "file", source: "../DASH-setup/server/public/videos", destination: "$HOME/video-content"
     config.vm.synced_folder "../DASH-setup/server", "/home/vagrant/DASH-setup"
   end
 
