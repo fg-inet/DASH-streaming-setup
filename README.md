@@ -17,7 +17,7 @@ In general, the setup should be runnable on any current platform having Vagrant 
 
 
 ## Using the setup for video streaming measurements 
-__Step 1__ Open a terminal and navigate into the subfolder *vagrant_files*. Run the following command to provision all VMs (this might take a few minutes).
+__Step 1__ Open a terminal and navigate into the subfolder *vagrant_files*. Run the following command to provision all VMs (this will take a few minutes).
 ```
 vagrant up
 ```
@@ -34,7 +34,7 @@ __Step 2__ Open a second terminal and navigate again into the subfolder *vagrant
 ```   
 On the client VM, change the directory using 
 ```
-cd /home/vagrant/DASH-setup/fetcher
+cd /home/vagrant/DASH-setup/
 ```
 In this directory, a measurment run can be initiated with the following command: 
 ```
@@ -48,7 +48,7 @@ With the parameters being as follows.
    
 Then, a single run can for exmaple be initiated as follows: 
 ```
-npm start '/home/vagrant/browserDir' 'test_run' 'CBR_BBB_NA_10/playlist.mpd' '192.167.101.13'
+npm start /home/vagrant/browserDir test_run CBR_BBB_NA_10/playlist.mpd 192.167.101.13
 ```   
 
    * __Case 2: Performing a set of measurement runs using the automation script__: Adapt the file *experiment_startup.sh* according to your needs (more detail on the script can be found below). From the *vagrant_files* directory, run the following command from your host machine:
