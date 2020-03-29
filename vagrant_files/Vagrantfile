@@ -15,9 +15,11 @@ Vagrant.configure("2") do |config|
     end
 
     netem.vm.provision :shell, path: "setup_netem.sh"
-	netem.vm.provision "file", source: "netem_start_trace.sh", destination: "$HOME/netem_start_trace.sh"
-	netem.vm.provision "file", source: "trace_killer.sh", destination: "$HOME/trace_killer.sh"
-	netem.vm.provision "file", source: "trace_files", destination: "trace_files"
+    netem.vm.provision :shell, path: "startup_netem.sh", run: "always"
+
+	  netem.vm.provision "file", source: "netem_start_trace.sh", destination: "$HOME/netem_start_trace.sh"
+	  netem.vm.provision "file", source: "trace_killer.sh", destination: "$HOME/trace_killer.sh"
+	  netem.vm.provision "file", source: "trace_files", destination: "trace_files"
   end
 
   config.vm.define "client", primary: true do |client|
@@ -31,7 +33,9 @@ Vagrant.configure("2") do |config|
     end
 
     client.vm.provision :shell, path: "setup_client.sh"
-	config.vm.synced_folder "../DASH-setup/client", "/home/vagrant/DASH-setup"
+    client.vm.provision :shell, path: "startup_client.sh", run: "always"
+	  
+    client.vm.synced_folder "../DASH-setup/client", "/home/vagrant/DASH-setup"
 
   end
 
@@ -43,8 +47,10 @@ Vagrant.configure("2") do |config|
     end
 
     server.vm.provision :shell, path: "setup_server.sh"
-	server.vm.provision "file", source: "../DASH-setup/server/public/videos", destination: "$HOME/video-content"
-    config.vm.synced_folder "../DASH-setup/server", "/home/vagrant/DASH-setup"
+    server.vm.provision :shell, path: "startup_server.sh", run: "always"
+  	server.vm.provision "file", source: "../DASH-setup/server/public/videos", destination: "$HOME/video-content"
+  
+    server.vm.synced_folder "../DASH-setup/server", "/home/vagrant/DASH-setup"
   end
 
 end
