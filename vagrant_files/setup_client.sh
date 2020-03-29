@@ -24,5 +24,6 @@ cp -r DASH-setup DASH-setup-local
 cd DASH-setup-local
 
 npm install
+sudo npm install -g --force nodemon
 
 sudo apt-get install -y xauth
