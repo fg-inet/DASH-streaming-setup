@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+trap 'echo "# $BASH_COMMAND"' DEBUG
 
 # Put here the IP of the interfaces connected to the server and client
 TEST_IF_TO_SERVER="192.167.101.12"

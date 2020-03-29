@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC1068
+trap 'echo "# $BASH_COMMAND"' DEBUG
+
 HOMEDIR = "/home/vagrant/DASH-setup"
 
 
