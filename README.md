@@ -14,7 +14,7 @@ The setup has been tested for the following operating systems and Vagrant versio
    * Debian 9.12 (stretch) - Vagrant 2.0.2
    * Arch Linux - Vagrant 2.2.7-3
    
-In general, the setup should be runnable on any current platform having Vagrant installed. However, due to the virtualization, it cannot be run in a virtual envrionment (e.g. on a server VM). 
+In general, the setup should be runnable on any current platform having Vagrant installed. However, due to the virtualization, it cannot be run in a virtual envrionment (e.g. on a server VM). The machine should have at least 8GB of RAM.
 
 
 ## Using the setup for video streaming measurements 
