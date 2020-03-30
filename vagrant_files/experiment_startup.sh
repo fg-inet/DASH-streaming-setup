@@ -23,14 +23,14 @@ do
 		vagrant ssh netem -- -t timeout $vid_timeout bash netem_start_trace.sh trace_files/$trace_folder/$tr &
 		sleep 1
 		#start the measurement at the client
-		vagrant ssh client -- -t "(cd /home/vagrant/DASH-setup && timeout $vid_timeout npm start $browserDir $run_var $videoDirVAR $host)"
+		vagrant ssh client -- -t "(cd /home/vagrant/DASH-setup-local && timeout $vid_timeout npm start $browserDir $run_var $videoDirVAR $host)"
 		sleep 5
 		# do the same for NA video 
 		vagrant ssh netem -- -t bash trace_killer.sh 
 		sleep 1
 		vagrant ssh netem -- -t timeout $vid_timeout bash netem_start_trace.sh trace_files/$trace_folder/$tr &
 		sleep 1
-		vagrant ssh client -- -t "(cd /home/vagrant/DASH-setup && timeout $vid_timeout npm start $browserDir $run_var $videoDirNA $host)"
+		vagrant ssh client -- -t "(cd /home/vagrant/DASH-setup-local && timeout $vid_timeout npm start $browserDir $run_var $videoDirNA $host)"
 		sleep 5
 
 	done
