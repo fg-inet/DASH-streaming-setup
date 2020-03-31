@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC1068
-HOMEDIR = "/home/vagrant/DASH-setup"
+trap 'echo "# $BASH_COMMAND"' DEBUG
 
-
-# Put here the IP of the interface connected to the shaping/netem host.
-TEST_IF_IP="192.167.100.11"
-
-TEST_ETH=$( ifconfig | sed -n "/addr:$TEST_IF_IP/{g;H;p};H;x" | awk '{print $1}' )
-
-ip route add 192.167.101.0/24 via 192.167.100.12 dev $TEST_ETH
-
-sudo apt update
+sudo DEBIAN_FRONTEND=noninteractive apt-get update
 
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
-sudo apt update
-sudo apt install -y google-chrome-stable
+sudo DEBIAN_FRONTEND=noninteractive apt-get update
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq google-chrome-stable
 
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt install -y nodejs
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq nodejs
 
-cd DASH-setup
+cd /home/vagrant/
+cp -r DASH-setup DASH-setup-local
+
+mkdir -p /home/vagrant/DASH-setup/logs/
+rm -r /home/vagrant/DASH-setup-local/logs
+ln -s /home/vagrant/DASH-setup/logs/ /home/vagrant/DASH-setup-local/logs
+
+chown -R vagrant:vagrant DASH-setup-local
+
+cd DASH-setup-local
+
 npm install
-
-sudo apt-get install -y xauth

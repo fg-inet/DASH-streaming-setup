@@ -12,8 +12,11 @@ The setup consists of three virtual machines.
 The setup has been tested for the following operating systems and Vagrant versions: 
    * Windows 10 - Vagrant 2.2.6
    * Debian 9.12 (stretch) - Vagrant 2.0.2
+   * Arch Linux - Vagrant 2.2.7-3
    
-In general, the setup should be runnable on any current platform having Vagrant installed. However, due to the virtualization, it cannot be run in a virtual environment (e.g. on a server VM). 
+
+In general, the setup should be runnable on any current platform having Vagrant installed. However, due to the virtualization, it cannot be run in a virtual envrionment (e.g. on a server VM). The machine should have at least 8GB of RAM.
+
 
 
 ## Using the setup for video streaming measurements 
@@ -27,6 +30,7 @@ All VMs are ready as soon as you can see the following output:
 ```
 
 __Step 2__ Open a second terminal and navigate again into the subfolder vagrant_files`
+
 
 * __Case 1: Performing a single measurement run__:
 
@@ -47,6 +51,7 @@ __Step 2__ Open a second terminal and navigate again into the subfolder vagrant_
      * `run_var`: A unique name for the experiment run
      * `videoDir`: Server-sided path for video to be streamed 
      * `host`: IP address of the server
+
    
   Then, a single run can for exmaple be initiated as follows: 
 

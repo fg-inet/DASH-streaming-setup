@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+trap 'echo "# $BASH_COMMAND"' DEBUG
+
 bandwidth_trace=$1
 
 readarray -t bw_vals < $bandwidth_trace

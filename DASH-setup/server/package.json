@@ -6,15 +6,10 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
-    "cookie-parser": "^1.4.4",
-    "dashjs": "^2.9.3",
-    "debug": "~2.6.9",
-    "express": "~4.16.0",
-    "grunt": "^1.0.4",
-    "json2csv": "^4.5.3",
-    "morgan": "~1.9.0",
-    "nodemon": "^2.0.2",
-    "puppeteer": "^1.20.0",
-    "socket.io": "^2.3.0"
-  }
+    "cookie-parser": "",
+    "dashjs": "",
+    "express": "",
+    "morgan": "",
+    "nodemon": ""
+    }
 }

@@ -7,7 +7,7 @@
     "run": "npm start --prefix DASHStreamExample/fetcher\n${HOME}/.google-chrome/session_clt_{clt}_srv_{srv}_vid_{video}_run_{run}\n{run} {video}"
   },
   "dependencies": {
-    "puppeteer": "^1.20.0",
-    "puppeteer-core": "^1.13.0"
+    "puppeteer": "",
+    "puppeteer-core": ""
   }
 }
