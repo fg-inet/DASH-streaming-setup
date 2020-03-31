@@ -40,7 +40,7 @@ __Step 2__ Open a second terminal and navigate again into the subfolder vagrant_
 
   On the client VM, change the directory using 
 
-      cd /home/vagrant/DASH-setup/
+      cd /home/vagrant/DASH-setup-local/
 
   In this directory, a measurment run can be initiated with the following command: 
 
