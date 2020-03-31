@@ -24,3 +24,6 @@ chown -R vagrant:vagrant DASH-setup-local
 cd DASH-setup-local
 
 npm install
+
+sed -i 's/const DEFAULT_TIMEOUT = 30000;/const DEFAULT_TIMEOUT = 100000;/g' /home/vagrant/DASH-setup-local/node_modules/puppeteer-core/lib/TimeoutSettings.js
+sed -i 's/const DEFAULT_TIMEOUT = 30000;/const DEFAULT_TIMEOUT = 100000;/g' /home/vagrant/DASH-setup-local/node_modules/puppeteer/lib/TimeoutSettings.js

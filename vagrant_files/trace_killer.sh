@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# trap 'echo "# $BASH_COMMAND"' DEBUG
+#trap 'echo "# $BASH_COMMAND"' DEBUG
 
 #check if any old trace-script is running on netem 
 process_id=$(ps aux | grep netem_start_trace)
